@@ -26,13 +26,6 @@ abstract class TestCase extends BaseTestCase
         parent::tearDown();
     }
 
-    protected function getEnvironmentSetUp($app): void
-    {
-        $config = require __DIR__ . '/config/database.php';
-        $app['config']->set('database.default', 'testing');
-        $app['config']->set('database.connections.testing', $config['mysql']);
-    }
-
     protected function getPackageProviders($app): array
     {
         return [DatabaseTriggerServiceProvider::class];
