@@ -24,7 +24,7 @@ The `createTrigger` method accepts two arguments: the first is the name of the t
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
-use Esign\DatabaseTrigger\Schema;
+use Esign\DatabaseTrigger\Facades\Schema;
 
 Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
     $trigger->on('posts');
@@ -38,7 +38,7 @@ Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
 You may check for the existence of a trigger by using the `hasTrigger` method:
 
 ```php
-use Esign\DatabaseTrigger\Schema;
+use Esign\DatabaseTrigger\Facades\Schema;
 
 Schema::hasTrigger('my_trigger');
 ```
@@ -47,7 +47,7 @@ Schema::hasTrigger('my_trigger');
 You may drop an existing trigger by using the `dropTrigger` or `dropTriggerIfExists` methods:
 
 ```php
-use Esign\DatabaseTrigger\Schema;
+use Esign\DatabaseTrigger\Facades\Schema;
 
 Schema::dropTrigger('my_trigger');
 
@@ -67,7 +67,7 @@ This will publish a migration with the following contents:
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
-use Esign\DatabaseTrigger\Schema;
+use Esign\DatabaseTrigger\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration

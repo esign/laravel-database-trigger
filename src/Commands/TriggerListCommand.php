@@ -3,7 +3,7 @@
 namespace Esign\DatabaseTrigger\Commands;
 
 use Esign\DatabaseTrigger\DatabaseTrigger;
-use Esign\DatabaseTrigger\Schema;
+use Esign\DatabaseTrigger\Facades\Schema;
 use Illuminate\Console\Command;
 
 class TriggerListCommand extends Command

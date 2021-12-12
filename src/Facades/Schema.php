@@ -1,6 +1,6 @@
 <?php
 
-namespace Esign\DatabaseTrigger;
+namespace Esign\DatabaseTrigger\Facades;
 
 use Esign\DatabaseTrigger\Database\Schema\Grammars\MySqlGrammar;
 use Esign\DatabaseTrigger\Database\Schema\MySqlBuilder;

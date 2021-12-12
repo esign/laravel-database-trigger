@@ -3,7 +3,7 @@
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
-use Esign\DatabaseTrigger\Schema;
+use Esign\DatabaseTrigger\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
