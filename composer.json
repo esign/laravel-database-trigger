@@ -3,7 +3,9 @@
     "description": "Easily create database triggers inside of your Laravel application",
     "keywords": [
         "esign",
-        "database-trigger"
+        "mysql",
+        "trigger",
+        "database"
     ],
     "homepage": "https://github.com/esign/laravel-database-trigger",
     "license": "MIT",
