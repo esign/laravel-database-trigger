@@ -51,5 +51,7 @@
                 "DatabaseTrigger": "Esign\\DatabaseTrigger\\DatabaseTriggerFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
