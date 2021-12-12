@@ -1,0 +1,55 @@
+{
+    "name": "esign/laravel-database-trigger",
+    "description": "Easily create database triggers inside of your Laravel application",
+    "keywords": [
+        "esign",
+        "database-trigger"
+    ],
+    "homepage": "https://github.com/esign/laravel-database-trigger",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jordy Van der Haegen",
+            "email": "jordy.vanderhaegen@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^8.0",
+        "laravel/database": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esign\\DatabaseTrigger\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Esign\\DatabaseTrigger\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "phpcs": "vendor/bin/php-cs-fixer fix"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Esign\\DatabaseTrigger\\DatabaseTriggerServiceProvider"
+            ],
+            "aliases": {
+                "DatabaseTrigger": "Esign\\DatabaseTrigger\\DatabaseTriggerFacade"
+            }
+        }
+    }
+}

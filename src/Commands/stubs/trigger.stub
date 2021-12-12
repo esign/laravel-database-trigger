@@ -1,0 +1,25 @@
+<?php
+
+use Esign\DatabaseTrigger\DatabaseTrigger;
+use Esign\DatabaseTrigger\Enums\TriggerEvent;
+use Esign\DatabaseTrigger\Enums\TriggerTiming;
+use Esign\DatabaseTrigger\Schema;
+use Illuminate\Database\Migrations\Migration;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::createTrigger('{{ triggerName }}', function (DatabaseTrigger $trigger) {
+            $trigger->on('{{ triggerTable }}');
+            $trigger->timing(TriggerTiming::{{ triggerTiming }});
+            $trigger->event(TriggerEvent::{{ triggerEvent }});
+            $trigger->statement('');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropTriggerIfExists('{{ triggerName }}');
+    }
+};
