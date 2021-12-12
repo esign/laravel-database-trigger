@@ -30,7 +30,7 @@ abstract class TestCase extends BaseTestCase
     {
         $config = require __DIR__ . '/config/database.php';
         $app['config']->set('database.default', 'testing');
-        $app['config']->set('database.connections.testing', $config[env('DATABASE') ?: 'mysql']);
+        $app['config']->set('database.connections.testing', $config['mysql']);
     }
 
     protected function getPackageProviders($app): array
