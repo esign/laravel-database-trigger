@@ -6,19 +6,12 @@ use Esign\DatabaseTrigger\Database\Schema\Grammars\MySqlGrammar;
 use Esign\DatabaseTrigger\Database\Schema\MySqlBuilder;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Builder;
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\Schema as BaseSchema;
 use RuntimeException;
 
-class Schema extends Facade
+class Schema extends BaseSchema
 {
-    protected static function getFacadeAccessor(): Builder
-    {
-        return static::getSchemaBuilder(
-            static::$app['db']->connection()
-        );
-    }
-
-    public static function connection(string $name): Builder
+    public static function connection($name): Builder
     {
         return static::getSchemaBuilder(
             static::$app['db']->connection($name)
