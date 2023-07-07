@@ -14,7 +14,7 @@ return new class extends Migration
             $trigger->on('{{ triggerTable }}');
             $trigger->timing(TriggerTiming::{{ triggerTiming }});
             $trigger->event(TriggerEvent::{{ triggerEvent }});
-            $trigger->statement('');
+            $trigger->statement('{{ triggerStatement }}');
         });
     }
 

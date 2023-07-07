@@ -34,6 +34,7 @@ class MigrationCreator extends BaseMigrationCreator
             '{{ triggerTable }}' => $trigger->table,
             '{{ triggerEvent }}' => TriggerEvent::from($trigger->event)->name,
             '{{ triggerTiming }}' => TriggerTiming::from($trigger->timing)->name,
+            '{{ triggerStatement }}' => $trigger->statement ?? '',
         ];
 
         foreach ($replacements as $search => $replacement) {
