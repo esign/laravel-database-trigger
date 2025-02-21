@@ -21,7 +21,7 @@ class Schema extends BaseSchema
     public static function getSchemaBuilder(Connection $connection): Builder
     {
         $getSchemaBuilderForGrammar = function (string $grammarClass, string $builderClass) use ($connection): Builder {
-            $connection->setSchemaGrammar($connection->withTablePrefix(new $grammarClass()));
+            $connection->setSchemaGrammar(new $grammarClass($connection));
 
             return new $builderClass($connection);
         };
