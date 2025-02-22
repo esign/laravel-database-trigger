@@ -13,7 +13,7 @@ use Esign\DatabaseTrigger\Tests\TestCase;
 class TriggerListCommandTest extends TestCase
 {
     #[Test]
-    public function it_can_display_a_list_of_triggers()
+    public function it_can_display_a_list_of_triggers(): void
     {
         Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
             $trigger->on('posts');

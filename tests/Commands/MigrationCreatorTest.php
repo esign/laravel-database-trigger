@@ -14,7 +14,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 class MigrationCreatorTest extends TestCase
 {
     #[Test]
-    public function it_can_populate_the_stub_file()
+    public function it_can_populate_the_stub_file(): void
     {
         $creator = $this->getCreator();
         $creator->expects($this->any())->method('getDatePrefix')->willReturn('foo');
@@ -46,7 +46,7 @@ class MigrationCreatorTest extends TestCase
     }
 
     #[Test]
-    public function it_can_populate_the_stub_file_providing_a_statement()
+    public function it_can_populate_the_stub_file_providing_a_statement(): void
     {
         $creator = $this->getCreator();
         $creator->expects($this->any())->method('getDatePrefix')->willReturn('foo');

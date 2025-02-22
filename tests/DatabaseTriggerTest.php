@@ -10,7 +10,7 @@ use Esign\DatabaseTrigger\Enums\TriggerTiming;
 class DatabaseTriggerTest extends TestCase
 {
     #[Test]
-    public function it_can_set_the_name()
+    public function it_can_set_the_name(): void
     {
         $trigger = (new DatabaseTrigger())->name('my_trigger');
 
@@ -18,7 +18,7 @@ class DatabaseTriggerTest extends TestCase
     }
 
     #[Test]
-    public function it_can_set_the_table_name()
+    public function it_can_set_the_table_name(): void
     {
         $trigger = (new DatabaseTrigger())->on('posts');
 
@@ -26,7 +26,7 @@ class DatabaseTriggerTest extends TestCase
     }
 
     #[Test]
-    public function it_can_set_the_timing()
+    public function it_can_set_the_timing(): void
     {
         $trigger = (new DatabaseTrigger())->timing(TriggerTiming::AFTER);
 
@@ -34,7 +34,7 @@ class DatabaseTriggerTest extends TestCase
     }
 
     #[Test]
-    public function it_can_set_the_event()
+    public function it_can_set_the_event(): void
     {
         $trigger = (new DatabaseTrigger())->event(TriggerEvent::INSERT);
 
@@ -42,7 +42,7 @@ class DatabaseTriggerTest extends TestCase
     }
 
     #[Test]
-    public function it_can_set_the_statement_as_a_closure()
+    public function it_can_set_the_statement_as_a_closure(): void
     {
         $trigger = (new DatabaseTrigger())->statement(function () {
             return "SET NEW.title = 'Default title';";
@@ -52,7 +52,7 @@ class DatabaseTriggerTest extends TestCase
     }
 
     #[Test]
-    public function it_can_set_the_statement_as_a_string()
+    public function it_can_set_the_statement_as_a_string(): void
     {
         $trigger = (new DatabaseTrigger())->statement("SET NEW.title = 'Default title';");
 

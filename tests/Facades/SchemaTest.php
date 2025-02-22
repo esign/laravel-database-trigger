@@ -12,7 +12,7 @@ use Esign\DatabaseTrigger\Tests\TestCase;
 class SchemaTest extends TestCase
 {
     #[Test]
-    public function it_can_create_a_trigger()
+    public function it_can_create_a_trigger(): void
     {
         Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
             $trigger->on('posts');
@@ -25,7 +25,7 @@ class SchemaTest extends TestCase
     }
 
     #[Test]
-    public function it_can_drop_a_trigger()
+    public function it_can_drop_a_trigger(): void
     {
         Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
             $trigger->on('posts');
@@ -40,7 +40,7 @@ class SchemaTest extends TestCase
     }
 
     #[Test]
-    public function it_can_drop_a_trigger_if_it_exists()
+    public function it_can_drop_a_trigger_if_it_exists(): void
     {
         Schema::dropTriggerIfExists('my_trigger');
 
@@ -48,7 +48,7 @@ class SchemaTest extends TestCase
     }
 
     #[Test]
-    public function it_can_check_if_a_trigger_exists()
+    public function it_can_check_if_a_trigger_exists(): void
     {
         $this->assertFalse(Schema::hasTrigger('my_trigger'));
 

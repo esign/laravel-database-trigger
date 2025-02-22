@@ -13,7 +13,7 @@ use Illuminate\Support\Composer;
 class TriggerMakeCommandTest extends TestCase
 {
     #[Test]
-    public function it_can_create_the_trigger_migration()
+    public function it_can_create_the_trigger_migration(): void
     {
         $this->mock(MigrationCreator::class, function ($mock) {
             $mock->shouldReceive('createTrigger')->once();
