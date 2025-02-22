@@ -9,7 +9,7 @@ use Esign\DatabaseTrigger\Enums\TriggerTiming;
 use Esign\DatabaseTrigger\Facades\Schema;
 use Esign\DatabaseTrigger\Tests\TestCase;
 
-class SchemaTest extends TestCase
+final class SchemaTest extends TestCase
 {
     #[Test]
     public function it_can_create_a_trigger(): void

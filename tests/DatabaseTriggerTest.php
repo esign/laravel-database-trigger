@@ -7,7 +7,7 @@ use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
 
-class DatabaseTriggerTest extends TestCase
+final class DatabaseTriggerTest extends TestCase
 {
     #[Test]
     public function it_can_set_the_name(): void

@@ -11,7 +11,7 @@ use Illuminate\Filesystem\Filesystem;
 use Mockery;
 use PHPUnit\Framework\MockObject\MockObject;
 
-class MigrationCreatorTest extends TestCase
+final class MigrationCreatorTest extends TestCase
 {
     #[Test]
     public function it_can_populate_the_stub_file(): void
