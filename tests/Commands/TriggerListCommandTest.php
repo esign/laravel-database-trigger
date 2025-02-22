@@ -2,6 +2,7 @@
 
 namespace Esign\DatabaseTrigger\Tests\Commands;
 
+use PHPUnit\Framework\Attributes\Test;
 use Esign\DatabaseTrigger\Commands\TriggerListCommand;
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
@@ -11,7 +12,7 @@ use Esign\DatabaseTrigger\Tests\TestCase;
 
 class TriggerListCommandTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_display_a_list_of_triggers()
     {
         Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {

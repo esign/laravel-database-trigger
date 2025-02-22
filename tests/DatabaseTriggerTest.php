@@ -2,13 +2,14 @@
 
 namespace Esign\DatabaseTrigger\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
 
 class DatabaseTriggerTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_set_the_name()
     {
         $trigger = (new DatabaseTrigger())->name('my_trigger');
@@ -16,7 +17,7 @@ class DatabaseTriggerTest extends TestCase
         $this->assertEquals('my_trigger', $trigger->name);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_the_table_name()
     {
         $trigger = (new DatabaseTrigger())->on('posts');
@@ -24,7 +25,7 @@ class DatabaseTriggerTest extends TestCase
         $this->assertEquals('posts', $trigger->table);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_the_timing()
     {
         $trigger = (new DatabaseTrigger())->timing(TriggerTiming::AFTER);
@@ -32,7 +33,7 @@ class DatabaseTriggerTest extends TestCase
         $this->assertEquals(TriggerTiming::AFTER->value, $trigger->timing);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_the_event()
     {
         $trigger = (new DatabaseTrigger())->event(TriggerEvent::INSERT);
@@ -40,7 +41,7 @@ class DatabaseTriggerTest extends TestCase
         $this->assertEquals(TriggerEvent::INSERT->value, $trigger->event);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_the_statement_as_a_closure()
     {
         $trigger = (new DatabaseTrigger())->statement(function () {
@@ -50,7 +51,7 @@ class DatabaseTriggerTest extends TestCase
         $this->assertEquals("SET NEW.title = 'Default title';", $trigger->statement);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_the_statement_as_a_string()
     {
         $trigger = (new DatabaseTrigger())->statement("SET NEW.title = 'Default title';");

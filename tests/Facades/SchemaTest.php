@@ -2,6 +2,7 @@
 
 namespace Esign\DatabaseTrigger\Tests\Facades;
 
+use PHPUnit\Framework\Attributes\Test;
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
@@ -10,7 +11,7 @@ use Esign\DatabaseTrigger\Tests\TestCase;
 
 class SchemaTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_create_a_trigger()
     {
         Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
@@ -23,7 +24,7 @@ class SchemaTest extends TestCase
         $this->assertTrue(Schema::hasTrigger('my_trigger'));
     }
 
-    /** @test */
+    #[Test]
     public function it_can_drop_a_trigger()
     {
         Schema::createTrigger('my_trigger', function (DatabaseTrigger $trigger) {
@@ -38,7 +39,7 @@ class SchemaTest extends TestCase
         $this->assertFalse(Schema::hasTrigger('my_trigger'));
     }
 
-    /** @test */
+    #[Test]
     public function it_can_drop_a_trigger_if_it_exists()
     {
         Schema::dropTriggerIfExists('my_trigger');
@@ -46,7 +47,7 @@ class SchemaTest extends TestCase
         $this->assertFalse(Schema::hasTrigger('my_trigger'));
     }
 
-    /** @test */
+    #[Test]
     public function it_can_check_if_a_trigger_exists()
     {
         $this->assertFalse(Schema::hasTrigger('my_trigger'));

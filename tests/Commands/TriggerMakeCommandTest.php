@@ -2,6 +2,7 @@
 
 namespace Esign\DatabaseTrigger\Tests\Commands;
 
+use PHPUnit\Framework\Attributes\Test;
 use Esign\DatabaseTrigger\Commands\MigrationCreator;
 use Esign\DatabaseTrigger\Commands\TriggerMakeCommand;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
@@ -11,7 +12,7 @@ use Illuminate\Support\Composer;
 
 class TriggerMakeCommandTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_create_the_trigger_migration()
     {
         $this->mock(MigrationCreator::class, function ($mock) {
