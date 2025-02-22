@@ -2,6 +2,7 @@
 
 namespace Esign\DatabaseTrigger\Commands;
 
+use PHPUnit\Framework\Attributes\Test;
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
@@ -10,10 +11,10 @@ use Illuminate\Filesystem\Filesystem;
 use Mockery;
 use PHPUnit\Framework\MockObject\MockObject;
 
-class MigrationCreatorTest extends TestCase
+final class MigrationCreatorTest extends TestCase
 {
-    /** @test */
-    public function it_can_populate_the_stub_file()
+    #[Test]
+    public function it_can_populate_the_stub_file(): void
     {
         $creator = $this->getCreator();
         $creator->expects($this->any())->method('getDatePrefix')->willReturn('foo');
@@ -44,8 +45,8 @@ class MigrationCreatorTest extends TestCase
         );
     }
 
-    /** @test */
-    public function it_can_populate_the_stub_file_providing_a_statement()
+    #[Test]
+    public function it_can_populate_the_stub_file_providing_a_statement(): void
     {
         $creator = $this->getCreator();
         $creator->expects($this->any())->method('getDatePrefix')->willReturn('foo');

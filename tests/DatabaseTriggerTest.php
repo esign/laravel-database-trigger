@@ -2,46 +2,47 @@
 
 namespace Esign\DatabaseTrigger\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use Esign\DatabaseTrigger\DatabaseTrigger;
 use Esign\DatabaseTrigger\Enums\TriggerEvent;
 use Esign\DatabaseTrigger\Enums\TriggerTiming;
 
-class DatabaseTriggerTest extends TestCase
+final class DatabaseTriggerTest extends TestCase
 {
-    /** @test */
-    public function it_can_set_the_name()
+    #[Test]
+    public function it_can_set_the_name(): void
     {
         $trigger = (new DatabaseTrigger())->name('my_trigger');
 
         $this->assertEquals('my_trigger', $trigger->name);
     }
 
-    /** @test */
-    public function it_can_set_the_table_name()
+    #[Test]
+    public function it_can_set_the_table_name(): void
     {
         $trigger = (new DatabaseTrigger())->on('posts');
 
         $this->assertEquals('posts', $trigger->table);
     }
 
-    /** @test */
-    public function it_can_set_the_timing()
+    #[Test]
+    public function it_can_set_the_timing(): void
     {
         $trigger = (new DatabaseTrigger())->timing(TriggerTiming::AFTER);
 
         $this->assertEquals(TriggerTiming::AFTER->value, $trigger->timing);
     }
 
-    /** @test */
-    public function it_can_set_the_event()
+    #[Test]
+    public function it_can_set_the_event(): void
     {
         $trigger = (new DatabaseTrigger())->event(TriggerEvent::INSERT);
 
         $this->assertEquals(TriggerEvent::INSERT->value, $trigger->event);
     }
 
-    /** @test */
-    public function it_can_set_the_statement_as_a_closure()
+    #[Test]
+    public function it_can_set_the_statement_as_a_closure(): void
     {
         $trigger = (new DatabaseTrigger())->statement(function () {
             return "SET NEW.title = 'Default title';";
@@ -50,8 +51,8 @@ class DatabaseTriggerTest extends TestCase
         $this->assertEquals("SET NEW.title = 'Default title';", $trigger->statement);
     }
 
-    /** @test */
-    public function it_can_set_the_statement_as_a_string()
+    #[Test]
+    public function it_can_set_the_statement_as_a_string(): void
     {
         $trigger = (new DatabaseTrigger())->statement("SET NEW.title = 'Default title';");
 
